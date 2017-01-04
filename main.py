@@ -8,5 +8,7 @@ if __name__ == '__main__':
     query = sys.argv[2]
     for filename in glob.glob(os.path.join(path, '*.rb')):
         with open(filename, 'r') as f:
-            print(f.read())
-            print(filename)
+            if query in f.read():
+                print(filename)
+
+#write recursive folder traversal
